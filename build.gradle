@@ -39,7 +39,7 @@ spotless {
 //		palantirJavaFormat()
 //		googleJavaFormat()   // has its own section below
 //		eclipse()            // has its own section below
-		eclipse().configFile('src/main/resources/eclipse-config-formatter-from-idea-2022-3-default.xml')
+		eclipse().configFile('eclipse-formatter-config-from-idea-2022-3-default.xml')
 //		prettier()           // has its own section below
 //		clangFormat()        // has its own section below
 //
