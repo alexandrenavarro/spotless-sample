@@ -1,6 +1,6 @@
 plugins {
-	id 'java'
-	id "com.diffplug.spotless" version "6.15.0"
+    id 'java'
+    id "com.diffplug.spotless" version "6.15.0"
 }
 
 group = 'com.github.aleandrenavarro'
@@ -8,21 +8,23 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 
 spotless {
-	java {
+    java {
 //		// Use the default importOrder configuration
-		importOrder()
+//        importOrder()
 //		// optional: you can specify import groups directly
 //		// note: you can use an empty string for all the imports you didn't specify explicitly, '|' to join group without blank line, and '\\#` prefix for static imports
 //		importOrder('java|javax', 'com.acme', '', '\\#com.acme', '\\#')
@@ -30,21 +32,22 @@ spotless {
 //		// export config file: https://github.com/diffplug/spotless/blob/main/ECLIPSE_SCREENSHOTS.md#creating-spotlessimportorder
 //		importOrderFile('eclipse-import-order.txt') // import order file as exported from eclipse
 //
-		removeUnusedImports()
+//        removeUnusedImports()
 //
 //		// Cleanthat will refactor your code, but it may break your style: apply it before your formatter
 //		cleanthat()          // has its own section below
 //
 //		// Choose one of these formatters.
 //		palantirJavaFormat()
-//		googleJavaFormat()   // has its own section below
+//      googleJavaFormat()   // has its own section below
 //		eclipse()            // has its own section below
-		eclipse().configFile('eclipse-formatter-config-from-idea-2022-3-default.xml')
+
+        eclipse().configFile('eclipse-formatter-config-from-idea-2022-3-default-fixed.xml')
 //		prettier()           // has its own section below
 //		clangFormat()        // has its own section below
 //
 //		formatAnnotations()  // fixes formatting of type annotations, see below
 //
 //		licenseHeader '/* (C) $YEAR */' // or licenseHeaderFile
-	}
+    }
 }
